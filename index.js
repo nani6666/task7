@@ -27,7 +27,7 @@ const balance = {
  "AAA - 8191": 4344
 };
 
-console.log("Sort By User",sortByKey(acctData , "user" , "asc"));
+console.log("Sort By User",sortByKey(acctData , "user" , "desc"));
 console.log("filtered by Bob -", filterArray(acctData ,"user", "Bob"));
 console.log("filtered by Charlie -", filterArray(acctData ,"user", "Charlie"));
 console.log("sorted by acctNum",sortByKey(acctData , "acctNum" , "asc"));
@@ -35,13 +35,13 @@ console.log("filtered by Alice -", filterArray(acctData ,"user", "Alice"));
 
 
 function sortByKey(array, key , order) {
-  return array.sort(function(a, b){
-     let textA = a[key].toUpperCase();
-     let  textB = b[key].toUpperCase();
-    if(textA < textB) { return -1; }
-    if(textA > textB) { return 1; }
-    return 0
-});    
+  if (order == "asc"){
+    return array.sort((a, b) => a[key].localeCompare(b[key]));
+  }else {
+    return array.sort((a, b) => b[key].localeCompare(a[key]));
+  }
+  
+
 }
 
 
