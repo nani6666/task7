@@ -5,19 +5,23 @@ import './style.css';
 const acctData = [
  {
  "acctNum": "AAA - 1234",
- "user": "Alice"
+ "user": "Alice",
+ "balance":  4593.22
  },
  {
  "acctNum": "AAA - 5231",
- "user": "Bob"
+ "user": "Bob",
+ "balance":  232142.5
  },
  {
  "acctNum": "AAA - 9921",
- "user": "Alice"
+ "user": "Alice",
+ "balance": 0
  },
  {
  "acctNum": "AAA - 8191",
- "user": "Alice"
+ "user": "Alice",
+ "balance":  4344
  }
 ];
 const balance = {
@@ -26,16 +30,25 @@ const balance = {
  "AAA - 5231": 232142.5,
  "AAA - 8191": 4344
 };
- console.log(Object.keys(balance));
 
-console.log("Sort By User",acctData.sort(dynamicSort("user" , "desc")));
+document.getElementById("accountNumbers").innerHTML = JSON.stringify(accountNumbers(acctData , "acctNum"));
+
+document.getElementById("users").innerHTML = JSON.stringify(accountNumbers(acctData , "user"));
+
+document.getElementById("san").innerHTML = JSON.stringify(acctData.sort(sortBy("acctNum" , "asc")));
+
+
+console.log("Sort By User",acctData.sort(sortBy("user" , "asc")));
 console.log("filtered by Bob -", filterArray(acctData ,"user", "Bob"));
 console.log("filtered by Charlie -", filterArray(acctData ,"user", "Charlie"));
-// console.log("Sort By User",acctData.sort(dynamicSort("acctNum" , 1)));
 console.log("filtered by Alice -", filterArray(acctData ,"user", "Alice"));
 
 
-function dynamicSort(property , sortOrder) {
+function accountNumbers(array, key) {
+  return array.map(function(item) { return item[key]; });
+}
+
+function sortBy(property , sortOrder) {
      return function (a,b) {
         if(sortOrder == "desc"){
             return b[property].localeCompare(a[property]);
