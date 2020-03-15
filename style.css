@@ -1,3 +1,99 @@
-h1, h2 {
-  font-family: Lato;
-}
+	body{
+		position: relative;
+		display: inline-block;
+		float: left;
+		width: 100%;
+		padding: 0;
+		margin: 0;
+		font-family:arial;
+	}
+	.main-section{
+		position: relative;
+		display: inline-block;
+		float: left;
+		width: 100%;
+		float: left;
+	}
+	.main-section table{
+		position: relative;
+		display: inline-block;
+		float: left;
+		width: 100%;
+		border: 2px solid blue;
+	}
+	.main-section table thead,.main-section table tbody{
+		position:relative;
+		display:inline-block;
+		float:left;
+		width:100%;
+	}
+	.main-section table thead tr,.main-section table tbody tr{
+		position: relative;
+		display: inline-flex;
+		float: left;
+		align-items: center;
+		width: 100%;
+		border-bottom: 1px solid lightgrey;
+	}
+	.main-section table thead tr th,.main-section table tbody tr td{
+		position: relative;
+		display: inline-block;
+		float: left;
+	}
+	.main-section table thead tr th:nth-child(1),.main-section table tbody tr td:nth-child(1){
+		width: 40%;
+		padding: 8px 10px;
+		text-align:left;
+		font-weight:400;
+	}
+	.main-section table thead tr th:nth-child(2){
+		background: #ececec;
+		font-weight:400;
+	}
+	.main-section table thead tr th:nth-child(2),.main-section table tbody tr td:nth-child(2){
+		width: 60%;
+		padding: 8px 20px;
+		text-align: right;
+		font-size:18px;
+		
+	}
+	.main-section table tbody tr td:nth-child(2){
+		font-weight:600;
+		
+	}
+	p{
+		margin:0;
+	}
+	.colorRed{
+		color:red;
+		margin-top:5px;
+		font-size:16px;
+	}
+	.colorGreen{
+		color:green;
+		margin-top:5px;
+		font-size:16px;
+	}
+	.arrowIcon{
+		color: blue;
+		transform: rotate(90deg);
+		display: inline-block;
+		margin-right: 5px;
+	}
+	.main-section table tbody tr td:nth-child(1){
+		color: blue;
+		font-weight:600;
+		font-size:18px;
+	}
+	.main-section table tbody tr .loadMoreBtn{
+		padding: 20px !important;
+		font-size: 18px !important;
+		text-align: center !important;
+		display: inline-flex !important;
+		justify-content: center !important;
+		width: 100% !important;
+	}
+	.colorGrey{
+		color:grey;
+		margin-top: 5px;
+	}	
