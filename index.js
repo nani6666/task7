@@ -28,7 +28,7 @@ const balance = {
 };
 
 console.log("Sort By User",sortByKey(acctData , "user" , "asc"));
-
+console.log("sort by user new -",acctData.sort(compareValues('user', 'desc')));
 console.log("filtered by Bob -", filterArray(acctData ,"user", "Bob"));
 console.log("filtered by Charlie -", filterArray(acctData ,"user", "Charlie"));
 console.log("sorted by acctNum",sortByKey(acctData , "acctNum" , "asc"));
@@ -41,10 +41,11 @@ function sortByKey(array, key , order) {
      let  textB = b[key].toUpperCase();
     if(textA < textB) { return -1; }
     if(textA > textB) { return 1; }
+    return 0
 });    
 }
 
-function compareValues(key, order = 'asc') {
+function compareValues( key, order = 'asc') {
   return function innerSort(a, b) {
     if (!a.hasOwnProperty(key) || !b.hasOwnProperty(key)) {
       // property doesn't exist on either object
