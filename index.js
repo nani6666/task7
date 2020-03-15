@@ -26,7 +26,7 @@ const balance = {
  "AAA - 5231": 232142.5,
  "AAA - 8191": 4344
 };
-
+ console.log(Object.keys(balance));
 
 console.log("Sort By User",acctData.sort(dynamicSort("user" , "desc")));
 console.log("filtered by Bob -", filterArray(acctData ,"user", "Bob"));
