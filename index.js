@@ -27,23 +27,23 @@ const balance = {
  "AAA - 8191": 4344
 };
 
-console.log("Sort By User",sortByKey(acctData , "user" , "desc"));
+
+console.log("Sort By User",acctData.sort(dynamicSort("user" , "desc")));
 console.log("filtered by Bob -", filterArray(acctData ,"user", "Bob"));
 console.log("filtered by Charlie -", filterArray(acctData ,"user", "Charlie"));
-console.log("sorted by acctNum",sortByKey(acctData , "acctNum" , "asc"));
+// console.log("Sort By User",acctData.sort(dynamicSort("acctNum" , 1)));
 console.log("filtered by Alice -", filterArray(acctData ,"user", "Alice"));
 
 
-function sortByKey(array, key , order) {
-  if (order == "asc"){
-    return array.sort((a, b) => a[key].localeCompare(b[key]));
-  }else {
-    return array.sort((a, b) => b[key].localeCompare(a[key]));
-  }
-  
-
+function dynamicSort(property , sortOrder) {
+     return function (a,b) {
+        if(sortOrder == "desc"){
+            return b[property].localeCompare(a[property]);
+        }else{
+            return a[property].localeCompare(b[property]);
+        }        
+    }
 }
-
 
 
 
